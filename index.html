@@ -8,92 +8,85 @@
         body {
             background-color: rgb(30, 30, 30);
             color: rgb(210, 210, 210);
-            font-family: Arial, sans-serif;
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
             margin: 0;
-            display: grid;
-            font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; /* Apply Palatino Linotype font */
-            grid-template-rows: auto 1fr; /* Auto height for heading and flexible space for image */
             height: 100vh; /* Full viewport height */
+            display: flex; /* Use flexbox to center content */
+            justify-content: center; /* Horizontally center */
+            align-items: center; /* Vertically center */
+            text-align: center; /* Ensure text is centered */
         }
         h1 {
             font-size: 3em;
-            text-align: center;
-            margin: 20px 0;
-            position: relative; /* Relative to position the dropdown with it */
+            margin: 0; /* Remove default margin */
         }
         h2 {
             font-size: 2em;
-            margin-bottom: 20px;
-            margin-top: -10px;
-            text-align: center;
-        }
-        .image-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%; /* Remaining space for the image */
-            margin-top: -85px; /* Move the image up by 1/2 inch (~12.7px per 1/6 inch) */
-        }
-        img {
-            max-width: 100%;
-            max-height: calc(98vh - 180px); /* Adjust the available space to prevent image cutoff */
-            width: auto;
-            height: auto;
-            border: 0.05in solid gray;
-            box-sizing: border-box;
+            margin: 10px 0 0 0; /* Space below the h1 but no space above */
         }
         .dropdown {
             position: absolute;
-            top: 55px; /* Adjust this to align with the bottom of 'Alchemy' */
-            left: calc(20px + 0.5in); /* Move 1/2 inch (0.5in) to the right */
+            top: 55px;
+            left: calc(20px + 0.5in);
         }
         .dropdown button {
-            font-size: 1.1em; /* Slightly reduced font size */
-            padding: 8px 16px; /* Adjust padding to fit the new size */
+            font-size: 1.1em;
+            padding: 8px 16px;
         }
         .dropdown-content {
             display: none;
             position: absolute;
             background-color: #333;
-            min-width: 220px; /* Increased to fit project names on one line */
+            min-width: 220px;
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
             z-index: 1;
         }
         .dropdown:hover .dropdown-content {
             display: block;
         }
-        .dropdown-content a {
+        .dropdown-content a, .dropdown-content span {
             color: white;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
-            white-space: nowrap; /* Prevent project names from breaking into two lines */
+            white-space: nowrap;
+            text-align: left; /* Left-align the text in the dropdown */
+            padding-left: 16px; /* Uniform padding for main headings */
+        }
+        .dropdown-content a.subheading {
+            padding-left: 32px; /* Add indentation for subheadings */
         }
         .dropdown-content a:hover {
             background-color: #555;
         }
+        .dropdown-content .no-click {
+            cursor: default;
+            color: lightgrey; /* Different color for non-clickable item */
+        }
     </style>
 </head>
 <body>
-    <h1>Alchemy Interior Design</h1>
-    <h2>Recent Projects</h2>
+    <div>
+        <h1>Alchemy Interior Design</h1>
+        <h2>Recent Projects</h2>
+    </div>
 
     <!-- Projects Dropdown Button aligned with heading and resized -->
     <div class="dropdown">
         <button>Projects</button>
         <div class="dropdown-content">
             <a href="projects/newjersey.html">Country House</a>
-            <a href="projects/philly.html">Philadelphia Apartment Building</a>
+            <span class="no-click">Iconic Mid-Century High Rise</span>
+            <a href="projects/p_lobby.html" class="subheading">Lobby</a>
+            <a href="projects/p_amspace.html" class="subheading">Amenities Space</a>
+            <a href="projects/p_roof.html" class="subheading">Roof Deck</a>
             <a href="projects/upperwestapartment.html">Upper West Side Apartment</a>
             <a href="projects/upperwestbrownstone.html">Upper West Side Brownstone</a>
             <a href="projects/tribeca.html">Tribeca Apartment</a>
-            <a href="projects/cpwapartment.html">Central Park West Apartment</a>
+            <a href="projects/cpw66.html">Central Park West Apartment - 66th St</a>
+            <a href="projects/cpw86.html">Central Park West Apartment - 86th St</a>
+            <a href="projects/5aveapt.html">5th Avenue Apartment</a>
         </div>
-    </div>
-
-    <div class="image-container">
-        <!-- Display page 1 image of New Jersey Country House -->
-        <img src="images/homepagepic.jpg" alt="New Jersey Country House">
     </div>
 
 </body>

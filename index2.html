@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alchemy Interior Design</title>
+    <style>
+        body {
+            background-color: rgb(30, 30, 30);
+            color: rgb(210, 210, 210);
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+            margin: 0;
+            height: 100vh; /* Full viewport height */
+            display: flex; /* Use flexbox to center content */
+            justify-content: center; /* Horizontally center */
+            align-items: center; /* Vertically center */
+            text-align: center; /* Ensure text is centered */
+        }
+        h1 {
+            font-size: 3em;
+            margin: 0; /* Remove default margin */
+        }
+        h2 {
+            font-size: 2em;
+            margin: 10px 0 0 0; /* Space below the h1 but no space above */
+        }
+        .dropdown {
+            position: absolute;
+            top: 55px;
+            left: calc(20px + 0.5in);
+        }
+        .dropdown button {
+            font-size: 1.1em;
+            padding: 8px 16px;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 220px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            white-space: nowrap;
+            text-align: left; /* Left-align the text in the dropdown */
+        }
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Alchemy Interior Design</h1>
+        <h2>Recent Projects</h2>
+    </div>
+
+    <!-- Projects Dropdown Button aligned with heading and resized -->
+    <div class="dropdown">
+        <button>Projects</button>
+        <div class="dropdown-content">
+            <a href="projects/newjersey.html">Country House</a>
+            <a href="projects/philly.html">Iconic Mid-Century High Rise</a>
+            <a href="projects/upperwestapartment.html">Upper West Side Apartment</a>
+            <a href="projects/upperwestbrownstone.html">Upper West Side Brownstone</a>
+            <a href="projects/tribeca.html">Tribeca Apartment</a>
+            <a href="projects/cpwapartment.html">Central Park West Apartment</a>
+        </div>
+    </div>
+
+</body>
+</html>

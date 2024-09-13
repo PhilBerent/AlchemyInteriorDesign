@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country House</title>
+    <style>
+        body {
+            background-color: rgb(30, 30, 30);
+            color: rgb(180, 180, 180);
+            margin: 0;
+            display: grid;
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; /* Apply Palatino Linotype font */
+            grid-template-rows: auto 1fr;
+            height: 100vh;
+            overflow: hidden;
+        }
+        h1 {
+            margin: 20px;
+            font-size: 2em;
+            text-align: center;
+            user-select: none;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: 100%;
+            margin-top: -20px;
+        }
+        img {
+            max-width: 95%;
+            max-height: calc(95vh - 80px);
+            width: auto;
+            height: auto;
+            border: 0.05in solid grey;
+            box-sizing: border-box;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 2em;
+            background-color: white;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            user-select: none;
+        }
+        .arrow-left {
+            left: 20px;
+            transform: translateY(-50%);
+        }
+        .arrow-right {
+            right: 20px;
+            transform: translateY(-50%);
+        }
+        a.back {
+            color: white;
+            text-decoration: none;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="back">Back</a>
+    <h1>Central Park West Apartment - 86th St</h1>
+    
+    <div class="image-container">
+        <img id="project-image" src="../images/cpw86/page_1.jpg" alt="Central Park West Apartment - 86th St">
+        <div class="arrow arrow-left" onclick="prevImage()">&#8249;</div>
+        <div class="arrow arrow-right" onclick="nextImage()">&#8250;</div>
+    </div>
+
+    <script>
+        let currentImage = 1;
+        const maxImages = 100; // Assume up to 100 images are in the directory
+
+        function updateImage() {
+            const imgElement = document.getElementById('project-image');
+            const newSrc = `../images/cpw86/page_${currentImage}.jpg`;
+            imgElement.src = newSrc;
+
+            imgElement.onerror = function () {
+                if (currentImage > 1) {
+                    currentImage--;
+                } else {
+                    currentImage++;
+                }
+                imgElement.src = `../images/cpw86/page_${currentImage}.jpg`;
+            };
+        }
+
+        function prevImage() {
+            if (currentImage > 1) {
+                currentImage--;
+                updateImage();
+            }
+        }
+
+        function nextImage() {
+            if (currentImage < maxImages) {
+                currentImage++;
+                updateImage();
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowLeft') {
+                prevImage();
+                event.preventDefault();
+            } else if (event.key === 'ArrowRight') {
+                nextImage();
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
