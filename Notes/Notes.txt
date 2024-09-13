@@ -1,0 +1,9 @@
+Ok great let have you make something for me. The images are in the directories we set up
+The path is C:\Users\Phil\Documents\Laura\Temp Website\ and the sub directories are changed to those shown in the screen  shot.
+Please give me code to create the following website
+The main page should be headed "Alchemy Interior Design" and have the sub heading "Recent Projects"
+The image on the home page should be the "page 1" image from C:\Users\Phil\Documents\Laura\Temp Website\New Jersey Country House directory.
+The background should be black.
+There should be a dropdown menu with the heading "Projects" which allows for the selection of the projects with the names of each of the sub directories.
+On clicking one any project the user should be taken to the home page for that project
+The project home page should have a heading of the name of the project for all but the "New Jersey Country House" project should display the page 1 image as close to full screen as possible while allowing the display the entire image with a 1/2" border on each. the "New Jersey Country House" project should start by displaying page 2. The background should be black. On each side of the screen there should be a simple arrow pointing respectively left or right to allow the user to page through the images for that project. For now lets just include the first 5 pages of images of each project, or in the case of the "New Jersey Country House" we should included images 2-6. Each project home page should also have an arrow labled "Back" at the top left of the screen which takes the user back to the home page

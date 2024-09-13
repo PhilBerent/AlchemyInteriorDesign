@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alchemy Interior Design</title>
+    <style>
+        body {
+            background-color: rgb(30, 30, 30);
+            color: rgb(210, 210, 210);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: grid;
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; /* Apply Palatino Linotype font */
+            grid-template-rows: auto 1fr; /* Auto height for heading and flexible space for image */
+            height: 100vh; /* Full viewport height */
+        }
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            margin: 20px 0;
+            position: relative; /* Relative to position the dropdown with it */
+        }
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            margin-top: -10px;
+            text-align: center;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%; /* Remaining space for the image */
+            margin-top: -85px; /* Move the image up by 1/2 inch (~12.7px per 1/6 inch) */
+        }
+        img {
+            max-width: 100%;
+            max-height: calc(98vh - 180px); /* Adjust the available space to prevent image cutoff */
+            width: auto;
+            height: auto;
+            border: 0.05in solid gray;
+            box-sizing: border-box;
+        }
+        .dropdown {
+            position: absolute;
+            top: 55px; /* Adjust this to align with the bottom of 'Alchemy' */
+            left: calc(20px + 0.5in); /* Move 1/2 inch (0.5in) to the right */
+        }
+        .dropdown button {
+            font-size: 1.1em; /* Slightly reduced font size */
+            padding: 8px 16px; /* Adjust padding to fit the new size */
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 220px; /* Increased to fit project names on one line */
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            white-space: nowrap; /* Prevent project names from breaking into two lines */
+        }
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Alchemy Interior Design</h1>
+    <h2>Recent Projects</h2>
+
+    <!-- Projects Dropdown Button aligned with heading and resized -->
+    <div class="dropdown">
+        <button>Projects</button>
+        <div class="dropdown-content">
+            <a href="projects/newjersey.html">Country House</a>
+            <a href="projects/philly.html">Philadelphia Apartment Building</a>
+            <a href="projects/upperwestapartment.html">Upper West Side Apartment</a>
+            <a href="projects/upperwestbrownstone.html">Upper West Side Brownstone</a>
+            <a href="projects/tribeca.html">Tribeca Apartment</a>
+            <a href="projects/cpwapartment.html">Central Park West Apartment</a>
+        </div>
+    </div>
+
+    <div class="image-container">
+        <!-- Display page 1 image of New Jersey Country House -->
+        <img src="images/homepagepic.jpg" alt="New Jersey Country House">
+    </div>
+
+</body>
+</html>

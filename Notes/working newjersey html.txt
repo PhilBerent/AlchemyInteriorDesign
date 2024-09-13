@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Jersey Country House</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            margin: 0;
+        }
+        h1 {
+            margin-top: 20px;
+            font-size: 2em;
+        }
+        img {
+            max-width: 90%;
+            height: auto;
+            border: 0.5in solid white;
+            margin: 20px 0;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 30px;
+            font-size: 2em;
+            background-color: white;
+            color: black;
+            cursor: pointer;
+        }
+        .arrow-left {
+            left: 10px;
+        }
+        .arrow-right {
+            right: 10px;
+        }
+        a.back {
+            color: white;
+            text-decoration: none;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="back">Back</a>
+    <h1>New Jersey Country House</h1>
+    
+    <!-- Initial image set to page 2 (using the lowercase path and .jpeg extension) -->
+    <img id="project-image" src="../images/newjersey/page_2.jpeg" alt="New Jersey Country House">
+    
+    <!-- Arrows to navigate through images -->
+    <div class="arrow arrow-left" onclick="prevImage()">&#8249;</div>
+    <div class="arrow arrow-right" onclick="nextImage()">&#8250;</div>
+
+    <script>
+        let currentImage = 2;
+        const totalImages = 6; // Number of images for New Jersey Country House (images 2 to 6)
+
+        function updateImage() {
+            // Adjust to match the correct lowercase path and .jpeg extension
+            document.getElementById('project-image').src = `../images/newjersey/page_${currentImage}.jpeg`;
+        }
+
+        function prevImage() {
+            if (currentImage > 2) {
+                currentImage--;
+                updateImage();
+            }
+        }
+
+        function nextImage() {
+            if (currentImage < totalImages) {
+                currentImage++;
+                updateImage();
+            }
+        }
+    </script>
+</body>
+</html>
